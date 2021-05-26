@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./BottomNav.css";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
@@ -12,6 +13,7 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     position: "fixed",
+    paddingBottom: "80px",
     bottom: 0,
     backgroundColor: "#2d313a",
     zIndex: 100,
@@ -29,26 +31,25 @@ const BottomNav = () => {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction
-        className="text-white"
-        label="Trending"
-        icon={<WhatshotIcon />}
-      />
-      <BottomNavigationAction
-        className="text-white"
-        label="Movies"
-        icon={<MovieIcon />}
-      />
-      <BottomNavigationAction
-        className="text-white"
-        label="TV Series"
-        icon={<TvIcon />}
-      />
-      <BottomNavigationAction
-        className="text-white"
-        label="Search"
-        icon={<SearchIcon />}
-      />
+      <Link to="/" className='mx-3'>
+        <BottomNavigationAction
+          className="text-white"
+          icon={<WhatshotIcon />}
+        />
+        <span className="text-white text-center d-block">Trending</span>
+      </Link>
+      <Link to="/movies" className='mx-3'>
+        <BottomNavigationAction className="text-white" icon={<MovieIcon />} />
+        <span className="text-white text-center d-block">Movies</span>
+      </Link>
+      <Link to="/series" className='mx-3'>
+        <BottomNavigationAction className="text-white" icon={<TvIcon />} />
+        <span className="text-white text-center d-block">TV Series</span>
+      </Link>
+      <Link to="/search" className='mx-3'>
+        <BottomNavigationAction className="text-white" icon={<SearchIcon />} />
+        <span className="text-white text-center d-block">Search</span>
+      </Link>
     </BottomNavigation>
   );
 };

@@ -1,4 +1,4 @@
-# <h1> Balsam Pharmacy </h1>
+# <h1> Movies App </h1>
 
 > By: **Showk Mahmoud**
 
@@ -12,6 +12,7 @@
 -Bootstrap
 -Reactsrap
 -Material UI
+-GitHub
 -ES6
 
 ## Installation 

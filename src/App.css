@@ -12,6 +12,10 @@
   a{
       text-decoration: none !important;
   }
+  img{
+    width: 100%;
+    padding: 0;
+  }
   @media (max-width: 700px) {
     .App {
       padding-top: 70px;
@@ -27,6 +31,7 @@
     padding: 4px;
     border-radius: 50px;
     color: white;
+    font-weight: bold;
   }
   
   @media (max-width: 1000px) {

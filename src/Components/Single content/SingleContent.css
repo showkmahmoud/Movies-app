@@ -1,0 +1,25 @@
+.single_content{
+    background-color: #282c34 !important;
+}
+.single_content,
+.single_content__description,
+.single_content__title{
+    cursor: pointer;
+    transition: .2s ease;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+}
+.single_content:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+  .single_content:hover .single_content__description ,   .single_content:hover .single_content__title{
+    color: black !important;
+}  
+.MuiBadge-badge{
+    height: 30px !important;
+    padding: 0 10px !important;
+    border-radius: 20px !important;
+}

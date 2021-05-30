@@ -18,7 +18,7 @@ function App() {
     <Router>
     <Header/>
     <div className="App">
-      <div className="container ">
+      <div className="container pb-5 ">
       <Switch>
           <Route exact path="/" component={Trending} />
           <Route path="/movies" component={Movies} />

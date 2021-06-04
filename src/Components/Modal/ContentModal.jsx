@@ -39,7 +39,7 @@ export default function ContentModal({children ,media_type,id}) {
   return (
     <>
       <div
-        className="media col-5 col-sm-5 ml-sm-1 col-md-3 mx-md-1 col-lg-2 my-3 p-1"
+        className="media col-5 mx-auto col-sm-5 ml-sm-1 col-md-3 mx-md-1 col-lg-2 my-3 p-1"
         style={{ cursor: "pointer" }}
         color="inherit"
         onClick={handleOpen}

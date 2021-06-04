@@ -39,7 +39,7 @@ const Series = () => {
         setGenres={setGenres}
         setPage={setPage}
       />
-      <div className="series row no-gutters justify-content-between pt-2">
+      <div className="series row no-gutters justify-content-between p-2">
         {content &&
           content.map((series) => (
             <SingleContent

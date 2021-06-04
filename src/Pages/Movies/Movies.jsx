@@ -35,7 +35,7 @@ const Movies = () => {
         setGenres={setGenres}
         setPage={setPage}
       />
-      <div className="movies row no-gutters justify-content-between pt-2">
+      <div className="movies row no-gutters justify-content-between p-2">
         {movies &&
           movies.map((movie) => {
             return (

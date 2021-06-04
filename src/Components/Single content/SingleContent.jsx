@@ -6,25 +6,22 @@ import ContentModal from "../Modal/ContentModal";
 
 const SingleContent = ({ id, poster, title, date, mediaType, voteAverage }) => {
   return (
-    <div className="single_content card mx-auto col-5 col-sm-5 col-md-3 mx-md-1 col-lg-2 mx-lg-1 my-3 p-1 ">
-      <ContentModal>
-        <Badge
-          badgeContent={voteAverage}
-          color={voteAverage > 6 ? "primary" : "secondary"}
-        />
-        <img
-          className="rounded"
-          src={poster ? `${img_300}/${poster}` : unavailable}
-        />
-        <h5 className="single_content__title text-white mt-2 text-center">
-          {title}
-        </h5>
-        <div className="single_content__description px-1 d-flex justify-content-between text-white">
-          <p>{mediaType === "tv" ? "TV Series" : "Movie"}</p>
-          <p>{date}</p>
-        </div>
-      </ContentModal>
-    </div>
+    <ContentModal media_type={mediaType} id={id}>
+    <Badge
+      badgeContent={voteAverage}
+      color={voteAverage > 6 ? "primary" : "secondary"}
+    />
+    <img
+      className="poster"
+      src={poster ? `${img_300}${poster}` : unavailable}
+      alt={title}
+    />
+    <b className="title">{title}</b>
+    <span className="subTitle">
+      {mediaType === "tv" ? "TV Series" : "Movie"}
+      <span className="subTitle">{date}</span>
+    </span>
+  </ContentModal>
   );
 };
 

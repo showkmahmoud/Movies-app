@@ -31,22 +31,22 @@ const BottomNav = () => {
       showLabels
       className={classes.root}
     >
-      <Link to="/" className='mx-3'>
+      <Link to="/" className='mx-2'>
         <BottomNavigationAction
           className="text-white"
           icon={<WhatshotIcon />}
         />
         <span className="text-white text-center d-block">Trending</span>
       </Link>
-      <Link to="/movies" className='mx-3'>
+      <Link to="/movies" className='mx-2'>
         <BottomNavigationAction className="text-white" icon={<MovieIcon />} />
         <span className="text-white text-center d-block">Movies</span>
       </Link>
-      <Link to="/series" className='mx-3'>
+      <Link to="/series" className='mx-2'>
         <BottomNavigationAction className="text-white" icon={<TvIcon />} />
         <span className="text-white text-center d-block">TV Series</span>
       </Link>
-      <Link to="/search" className='mx-3'>
+      <Link to="/search" className='mx-2'>
         <BottomNavigationAction className="text-white" icon={<SearchIcon />} />
         <span className="text-white text-center d-block">Search</span>
       </Link>

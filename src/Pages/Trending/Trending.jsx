@@ -22,7 +22,7 @@ const Trending = () => {
   return (
     <div>
       <h2 className='pageTitle'>TRENDING TODAY</h2>
-      <div className="trending row no-gutters justify-content-between pt-2">
+      <div className="trending row no-gutters justify-content-between p-2">
         {contents &&
           contents.map((content) => {
             return (

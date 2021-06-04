@@ -37,10 +37,15 @@ export default function ContentModal({children ,media_type,id}) {
   };
 
   return (
-    <div>
-      <span className='position-relative' onClick={handleOpen}>
+    <>
+      <div
+        className="media col-5 col-sm-5 ml-sm-1 col-md-3 mx-md-1 col-lg-2 m-3 p-1"
+        style={{ cursor: "pointer" }}
+        color="inherit"
+        onClick={handleOpen}
+      >
         {children}
-      </span>
+      </div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -60,7 +65,7 @@ export default function ContentModal({children ,media_type,id}) {
           </div>
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 }
 

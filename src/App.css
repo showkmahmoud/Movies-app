@@ -21,7 +21,9 @@
       padding-top: 70px;
     }
   }
-  
+  button{
+    outline: none;
+  }
   .pageTitle {
     text-transform: uppercase;
     display: flex;

@@ -6,7 +6,7 @@ import ContentModal from "../Modal/ContentModal";
 
 const SingleContent = ({ id, poster, title, date, mediaType, voteAverage }) => {
   return (
-    <div className="single_content card mx-auto col-7 col-sm-5 col-md-3 mx-md-1 col-lg-2 mx-lg-1 my-3 p-1">
+    <div className="single_content card mx-auto col-5 col-sm-5 col-md-3 mx-md-1 col-lg-2 mx-lg-1 my-3 p-1 ">
       <ContentModal>
         <Badge
           badgeContent={voteAverage}

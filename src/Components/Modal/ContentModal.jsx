@@ -38,9 +38,9 @@ export default function ContentModal({children ,media_type,id}) {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
+      <span className='position-relative' onClick={handleOpen}>
         {children}
-      </button>
+      </span>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

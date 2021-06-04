@@ -21,8 +21,8 @@ const Trending = () => {
   }, [page]);
   return (
     <div>
-      <h2 className='pageTitle'>trending</h2>
-      <div className="trending row no-gutters justify-content-center pt-2">
+      <h2 className='pageTitle'>TRENDING TODAY</h2>
+      <div className="trending row no-gutters justify-content-between pt-2">
         {contents &&
           contents.map((content) => {
             return (

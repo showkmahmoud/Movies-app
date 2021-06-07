@@ -136,10 +136,8 @@ export default function ContentModal({children ,media_type,id}) {
                     startIcon={<YouTubeIcon />}
                     color="secondary"
                     target="__blank"
-                    href={`https://www.youtube.com/watch?tv=${video}`}
+                    href={`https://www.youtube.com/watch?v=${video}`}
                   >
-
-                  
                     Watch the Trailer
                   </Button>
                 </div>

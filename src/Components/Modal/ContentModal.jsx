@@ -1,9 +1,9 @@
+import './ContentModal.css' ;
 import React, { useEffect, useState } from "react";
-import './ContentModal.css';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 import axios from "axios";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
@@ -12,6 +12,7 @@ import {
   unavailable,
   unavailableLandscape,
 } from "../../Config/config";
+
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
       border: "1px solid #282c34",
       borderRadius: 10,
       color: "white",
+      outline:"none",
       boxShadow: theme.shadows[5],
       padding: theme.spacing(1, 1, 3),
     },
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContentModal({children ,media_type,id}) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
 
@@ -68,7 +70,7 @@ export default function ContentModal({children ,media_type,id}) {
   }, []);
   
   return (
-    <>
+    < >
       <div
         className="media col-5 mx-auto col-sm-5 ml-sm-1 col-md-3 mx-md-1 col-lg-2 my-3 p-1"
         style={{ cursor: "pointer" }}
@@ -125,7 +127,7 @@ export default function ContentModal({children ,media_type,id}) {
                     <i className="tagline">{content.tagline}</i>
                   )}
 
-                  <span className="ContentModal__description">
+                  <span className="ContentModal__description mb-4">
                     {content.overview}
                   </span>
 
@@ -134,8 +136,10 @@ export default function ContentModal({children ,media_type,id}) {
                     startIcon={<YouTubeIcon />}
                     color="secondary"
                     target="__blank"
-                    href={`https://www.youtube.com/watch?v=${video}`}
+                    href={`https://www.youtube.com/watch?tv=${video}`}
                   >
+
+                  
                     Watch the Trailer
                   </Button>
                 </div>

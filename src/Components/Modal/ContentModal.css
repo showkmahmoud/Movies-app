@@ -2,9 +2,7 @@
 a:hover{
   color : #fff !important
 }
-.makeStyles-paper-5{
-  outline:none;
-}
+
 .ContentModal__landscape {
   object-fit: contain;
   border-radius: 10px;

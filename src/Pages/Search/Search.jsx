@@ -1,4 +1,4 @@
-import { 
+import {
   Button,
   createMuiTheme,
   Tab,
@@ -28,38 +28,30 @@ const Search = () => {
       },
     },
   });
-
   const fetchSearch = async () => {
-    try {
-      const { data } = await axios.get(
-        `https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${
-          process.env.REACT_APP_API_KEY
-        }&language=en-US&query=${searchText}&page=${page}&include_adult=false`
-      );
-      setContent(data.results);
-      setNumOfPages(data.total_pages);
-      // console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
+    const { data } = await axios.get(`https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`)
+    setContent(data.results);
+    setNumOfPages(data.total_pages);
   };
 
   useEffect(() => {
     window.scroll(0, 0);
     fetchSearch();
-    // eslint-disable-next-line
-  }, [type, page]);
+    if (!searchText) {
+      setContent([]);
+    }
+  }, [type, page, searchText]);
 
   return (
     <div>
       <ThemeProvider theme={darkTheme}>
         <div className="search">
           <TextField
+            onChange={(e) => setSearchText(e.target.value)}
             style={{ flex: 1 }}
             className="searchBox"
             label="Search"
             variant="filled"
-            onChange={(e) => setSearchText(e.target.value)}
           />
           <Button
             onClick={fetchSearch}
@@ -71,12 +63,13 @@ const Search = () => {
         </div>
         <Tabs
           value={type}
-          indicatorColor="primary"
-          textColor="primary"
           onChange={(event, newValue) => {
             setType(newValue);
             setPage(1);
           }}
+          centered
+          indicatorColor="primary"
+          textColor="primary"
           style={{ paddingBottom: 5 }}
           aria-label="disabled tabs example"
         >
@@ -84,22 +77,23 @@ const Search = () => {
           <Tab style={{ width: "50%" }} label="Search TV Series" />
         </Tabs>
       </ThemeProvider>
+
       <div className=" row no-gutters justify-content-center pt-2">
         {content &&
-          content.map((c) => (
+          content.map((movie) => (
             <SingleContent
-              key={c.id}
-              id={c.id}
-              poster={c.poster_path}
-              title={c.title || c.name}
-              date={c.first_air_date || c.release_date}
-              media_type={type ? "tv" : "movie"}
-              vote_average={c.vote_average}
+            key={movie.id}
+            id={movie.id}
+            poster={movie.poster_path}
+            title={movie.title || movie.name}
+            date={movie.release_date || movie.first_air_date}
+            mediaType={type ? "tv" : "movie"}
+            voteAverage={movie.vote_average}
             />
           ))}
         {searchText &&
-          !content &&
-          (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
+          content.length < 1 &&
+          (type ? <h2 className = 'text-center mt-3'>No Series Found</h2> : <h2 className = ' mt-3 text-center'>No Movies Found</h2>)}
       </div>
       {numOfPages > 1 && (
         <CustomPagination setPage={setPage} numOfPages={numOfPages} />

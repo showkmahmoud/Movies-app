@@ -17,7 +17,7 @@ const SingleContent = ({ id, poster, title, date, mediaType, voteAverage }) => {
       alt={title}
     />
     <b className="title">{title}</b>
-    <span className="subTitle">
+    <span className="subTitle ">
       {mediaType === "tv" ? "TV Series" : "Movie"}
       <span className="subTitle">{date}</span>
     </span>
